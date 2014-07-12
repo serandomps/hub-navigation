@@ -1,0 +1,9 @@
+{
+    "name": "hub-navigation",
+    "description": "hub-navigation component",
+    "scripts": ["index.js"],
+    "main": "index.js",
+    "dependencies": {
+        "serandomps/navigation": "master"
+    }
+}
