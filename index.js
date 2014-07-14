@@ -19,5 +19,3 @@ module.exports = function (sandbox, fn, options) {
         }
     });
 };
-
-//TODO: add wraper div to the layout and pass that as the sandbox
