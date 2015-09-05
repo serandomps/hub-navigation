@@ -1,8 +1,9 @@
+var serand = require('serand');
 var navigation = require('navigation');
 
 var nav;
 
-module.exports = function (sandbox, fn, options) {
+var render = function () {
     $.ajax({
         url: '/apis/v/menus/1',
         headers: {
@@ -10,12 +11,23 @@ module.exports = function (sandbox, fn, options) {
         },
         dataType: 'json',
         success: function (data) {
-            navigation(sandbox, fn, data);
+            serand.emit('navigation', 'render', data);
         },
         error: function () {
-            fn(true, function () {
 
-            });
         }
     });
 };
+
+module.exports = function (sandbox, fn, options) {
+    navigation(sandbox, fn, options);
+    render();
+};
+
+serand.on('user', 'logged in', function (usr) {
+    render();
+});
+
+serand.on('user', 'logged out', function (usr) {
+    render();
+});

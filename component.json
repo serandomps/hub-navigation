@@ -4,6 +4,7 @@
     "scripts": ["index.js"],
     "main": "index.js",
     "dependencies": {
+        "serandomps/serand": "master",
         "serandomps/navigation": "master"
     }
 }
