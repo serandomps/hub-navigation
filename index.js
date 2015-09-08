@@ -1,13 +1,28 @@
 var serand = require('serand');
 var navigation = require('navigation');
 
-var nav;
+var links = {
+    home: {
+        url: '/',
+        title: 'serandives.com'
+    },
+    menu: [{
+        url: '/hub',
+        title: 'Hub'
+    }, {
+        url: '/domains',
+        title: 'Domains'
+    }, {
+        url: '/configs',
+        title: 'Configs'
+    }]
+};
 
 var render = function () {
     $.ajax({
-        url: '/apis/v/menus/1',
+        url: '/apis/v/menus/0',
         headers: {
-            'x-host': 'hub.serandives.com:4000'
+            'x-host': 'autos.serandives.com'
         },
         dataType: 'json',
         success: function (data) {
@@ -20,8 +35,7 @@ var render = function () {
 };
 
 module.exports = function (sandbox, fn, options) {
-    navigation(sandbox, fn, options);
-    render();
+    navigation(sandbox, fn, links);
 };
 
 serand.on('user', 'logged in', function (usr) {
