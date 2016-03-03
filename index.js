@@ -22,7 +22,7 @@ var render = function () {
     $.ajax({
         url: '/apis/v/menus/0',
         headers: {
-            'x-host': 'autos.serandives.com'
+            'X-Host': 'autos.serandives.com'
         },
         dataType: 'json',
         success: function (data) {
