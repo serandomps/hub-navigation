@@ -1,8 +1,8 @@
 
-.navigation .navbar {
+.hub-navigation .navbar {
     font-weight: bold;
 }
 
-.navigation .navbar .search {
+.hub-navigation .navbar .search {
     display: inline;
 }
